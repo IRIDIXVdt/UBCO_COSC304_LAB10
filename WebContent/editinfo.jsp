@@ -39,7 +39,7 @@ out.println("Signed in as: "+userName);
 %>
 
 
-<h3>You can edit on of them, just leave space for other one.</h3>
+
 <br>
 <form name="MyForm" method=post action="editinfo2.jsp">
     <table style="display:inline">
