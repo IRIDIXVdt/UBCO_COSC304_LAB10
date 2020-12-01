@@ -3,6 +3,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Map" %>
+<%@ include file="auth.jsp"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
 <!DOCTYPE html>
 <html>
@@ -25,8 +26,8 @@ else
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 	out.println("<h1>Your Shopping Cart</h1>");
-	out.print("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
-	out.println("<th>Price</th><th>Subtotal</th></tr>");
+	out.print("<table><tr><th>Product Id</th><th>Product Name</th><th> </th><th>Quantity</th><th> </th>");
+	out.println("<th>Price</th><th>Subtotal</th><th> </th></tr>");
 
 	double total =0;
 	Iterator<Map.Entry<String, ArrayList<Object>>> iterator = productList.entrySet().iterator();
@@ -39,10 +40,12 @@ else
 			continue;
 		}
 		
-		out.print("<tr><td>"+product.get(0)+"</td>");
-		out.print("<td>"+product.get(1)+"</td>");
+		out.print("<tr><td align=\"center\">"+product.get(0)+"</td>");
+		out.print("<td align=\"center\">"+product.get(1)+"</td>");
 
+		out.print("<td><a href=deleteitem.jsp?id="+product.get(0)+"&name="+product.get(1)+"&price="+product.get(3)+">-</a></td>");
 		out.print("<td align=\"center\">"+product.get(3)+"</td>");
+		out.print("<td><a href=addcart.jsp?id="+product.get(0)+"&name="+product.get(1)+"&price="+product.get(3)+">+</a></td>");
 		Object price = product.get(2);
 		Object itemqty = product.get(3);
 		double pr = 0;
@@ -66,11 +69,12 @@ else
 		}		
 
 		out.print("<td align=\"right\">"+currFormat.format(pr)+"</td>");
-		out.print("<td align=\"right\">"+currFormat.format(pr*qty)+"</td></tr>");
+		out.print("<td align=\"right\">"+currFormat.format(pr*qty)+"</td>");
+		out.print("<td><a href=removeitem.jsp?id="+product.get(0)+"&name="+product.get(1)+"&price="+product.get(3)+">remove</a></td></tr>");
 		out.println("</tr>");
 		total = total +pr*qty;
 	}
-	out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>"
+	out.println("<tr><td colspan=\"6\" align=\"right\"><b>Order Total</b></td>"
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 

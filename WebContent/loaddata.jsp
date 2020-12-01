@@ -18,7 +18,7 @@ out.print("<h1>Connecting to database.</h1><br><br>");
 
 Connection con = DriverManager.getConnection(url, uid, pw);
         
-String fileName = "/usr/local/tomcat/webapps/shop/orderdb_sql.ddl";
+String fileName = "/usr/local/tomcat/webapps/shop/db.ddl";
 
 try
 {

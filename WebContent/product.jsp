@@ -26,6 +26,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
     ResultSet rst = pstmt.executeQuery();
     
     while(rst.next()){
+        String nameReplace = rst.getString(2).replace(" ", "%20");
         out.println("<h2>"+rst.getString(2)+"</h2>");
         out.println("<table><tr><th>Id:</th><td>"+rst.getInt(1)+"</td></tr><tr><th>Price: </th><td>"
             +currFormat.format(rst.getDouble(3))+"</td></tr>");
@@ -42,7 +43,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
             //out.println("<img style=\"-webkit-user-select: none;margin: auto;\" src=\"http://localhost/shop/displayImage.jsp?id=1\">");
         }
         out.println("</table>");
-        out.println("<h3><a href=addcart.jsp?id=" +rst.getInt(1)+ "&name=" +rst.getString(2)+ "&price=" +rst.getString(3)+ ">Add to Cart</a></h3>");
+        out.println("<h3><a href=addcart.jsp?id=" +rst.getInt(1)+ "&name=" +nameReplace+ "&price=" +rst.getString(3)+ ">Add to Cart</a></h3>");
         out.println("<h3><a href=\"listprod.jsp\">Continue Shopping</a>");
     }
     

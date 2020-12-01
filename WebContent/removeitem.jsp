@@ -1,8 +1,6 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.ArrayList" %>
-
 <%
-
 // Get the current list of products
 @SuppressWarnings({"unchecked"})
 HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
@@ -12,7 +10,7 @@ if (productList == null)
 	productList = new HashMap<String, ArrayList<Object>>();
 }
 
-// Add new product selected
+// Delete product selected
 // Get product information
 String id = request.getParameter("id");
 String name = request.getParameter("name");
@@ -30,10 +28,8 @@ product.add(quantity);
 if (productList.containsKey(id))
 {	product = (ArrayList<Object>) productList.get(id);
 	int curAmount = ((Integer) product.get(3)).intValue();
-	product.set(3, new Integer(curAmount+1));
+	productList.remove(id,product);
 }
-else
-	productList.put(id,product);
 
 session.setAttribute("productList", productList);
 %>

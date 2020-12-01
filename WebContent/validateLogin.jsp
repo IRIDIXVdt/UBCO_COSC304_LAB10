@@ -3,11 +3,13 @@
 <%
 
 	String authenticatedUser = null;
+	
 	session = request.getSession(true);
 
 	try
 	{
 		authenticatedUser = validateLogin(out,request,session);
+		
 	}
 	catch(IOException e)
 	{	System.err.println(e); }
@@ -58,5 +60,10 @@
 
 		return retStr;
 	}
+
+
+
+
+	
 %>
 
