@@ -67,10 +67,15 @@
 		<p align="center">
 		<select size="1" name="categoryName">
 		<option>All</option>
-		<option>Gryffindor</option>
-		<option>Hufflepuff</option>
-		<option>Ravenclaw</option>
-		<option>Slytherin</option>      
+		<option>Springy</option>
+		<option>Flexible</option>
+		<option>Inflexible</option>
+		<option>Swishy</option> 
+		<option>Stiff</option> 
+		<option>Brittle</option> 
+		<option>Bendy</option> 
+		<option>Pliable</option> 
+		<option>Whippy</option>      
 		</select>
 		<input type="text" name="productName" size="50">
 		<input type="submit" value="Submit"><input type="reset" value="Reset"></p>
