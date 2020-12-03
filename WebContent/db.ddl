@@ -304,3 +304,7 @@ UPDATE Product SET productImageURL = 'img/40.jpg' WHERE ProductId = 40;
 UPDATE Product SET productImageURL = 'img/41.jpg' WHERE ProductId = 41;
 UPDATE Product SET productImageURL = 'img/42.jpg' WHERE ProductId = 42;
 UPDATE Product SET productImageURL = 'img/43.jpg' WHERE ProductId = 43;
+
+INSERT INTO review(customerId, reviewRating, reviewDate, productId, reviewComment) VALUES (1, 5, '2020-12-01 12:24:30',1,'This wand is extremely comfortable to use! I love it!');
+INSERT INTO review(customerId, reviewRating, reviewDate, productId, reviewComment) VALUES (2, 4, '2020-12-02 20:21:11',1,'Pretty good. I will recommend this wand to my friends.');
+INSERT INTO review(customerId, reviewRating, reviewDate, productId, reviewComment) VALUES (2, 3, '2020-11-29 16:57:01',3,'Just ok.');
