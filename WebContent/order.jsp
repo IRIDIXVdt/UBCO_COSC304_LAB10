@@ -25,7 +25,8 @@
 		String uid = "SA";
 		String pw = "YourStrong@Passw0rd";
 		try ( Connection con = DriverManager.getConnection(url, uid, pw);
-			Statement stmt = con.createStatement();) {		
+			Statement stmt = con.createStatement();) 
+			{		
 			ResultSet rst = stmt.executeQuery("SELECT customerId, password FROM customer");
 			boolean idValid = false;
 			boolean passValid = false;
@@ -61,6 +62,18 @@
 				rst = stmt.executeQuery("SELECT orderId FROM OrderSummary ORDER BY orderId DESC");
 				rst.next();
 				OutputOrderId = rst.getInt(1);
+
+				// get customer address
+				ResultSet rst2 = stmt.executeQuery("SELECT address, city, state, postalCode, country FROM customer");
+				rst2.next();
+				
+				//OutputCity = rst.getString(2);
+				//OutputState = rst.getString(3);
+				//OutputPostalCode = rst.getString(4);
+				//OutputCountry = rst.getString(5);
+				out.println("<h1><br>Your lovely wand will be shipped to the following address:" + rst2.getString(1)+ " "+ rst2.getString(2)+" "+rst2.getString(3)+ " " + rst2.getString(4) + " " + rst2.getString(5) + "</h1>");
+				out.println("<h1>Please confirm this shipping address, to change the shipping address, click the link below: </h1>");
+				out.println("<h2><a href=\"editaddress.jsp\">Click me to change your shipping address</a></h2>");
 
 				//now print each item and insert into the database
 				String DMLInsertProduct = "";
@@ -99,9 +112,10 @@
 						+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 				out.println("</table>");
 
-				out.println("<h1 style = \"line-height:2\">Order completed. Will be shipped soon...");
+				out.println("<h1>Order completed. Will be shipped soon...");
 				out.println("<br>Your order reference number is: " + OutputOrderId);
-				out.println("<br>Shipping to customer: "+ OutputCustomerId +" Name: "+ OutputCustomerName + "</h1>");
+				out.println("<br>Shipping to customer: "+ OutputCustomerId +" Name: "+ OutputCustomerName);
+			
 
 				String totalAmountUpdatesql = "UPDATE OrderSummary SET totalAmount = ? WHERE OrderId = ?";
 				PreparedStatement totalAmountUpdate = con.prepareStatement(totalAmountUpdatesql);
@@ -130,5 +144,6 @@
 		}
 	%>
 	<h2><a href="shop.html">Return to Shopping</a></h2>
+	
 </body>
 </html>
