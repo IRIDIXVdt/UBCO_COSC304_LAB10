@@ -12,24 +12,34 @@
 </head>
 <style>
     #main{
-        width: 45%;
-        margin-left: 27.5%;
-        margin-right: 27.5%;
+        height: 450px;
     }
     #leftdiv{
+        width: 20%;
+        margin-left: 27.5%;
         margin-top: 50px;
         float: left;
-        width: 300px;
         height: 450px;
     }
     #rightdiv{
+        width: 20%;
+        margin-right: 27.5%;
         margin-top: 50px;
         float: right;
-        width: 300px;
         height: 450px;
     }
+    #box{
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        text-align: center;
+    }
     #review{
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
         margin-bottom: 10px;
+        text-align: center;
     }
 </style>
 <body>
@@ -48,13 +58,12 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
     PreparedStatement pstmt = con.prepareStatement(sql);		
     ResultSet rst = pstmt.executeQuery();
     
+    out.println("<div id=\"main\">");
     while(rst.next()){
-        out.println("<div id=\"main\">");
         if(rst.getString(4) != null){    
-            out.println("<div id=\"leftdiv\"><img src = " + rst.getString(4) + " width=\"250px\">");   
-            out.println("<table><td>"+rst.getString(6)+"</td></table></div>");
+            out.println("<div id=\"leftdiv\"><img src = " + rst.getString(4) + " width=\"250px\"><div><h4>"+rst.getString(6)+"</h4></div></div>");   
         }else{
-            out.println("<div id=\"leftdiv\"><table><td>"+rst.getString(6)+"</td></table></div>");
+            out.println("<div id=\"leftdiv\"><h4>"+rst.getString(6)+"</h4></div>");
         }
         
         String nameReplace = rst.getString(2).replace(" ", "%20");
@@ -65,9 +74,8 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
         out.println("</table>");
         out.println("<h3><a href=addcart.jsp?id=" +rst.getInt(1)+ "&name=" +nameReplace+ "&price=" +rst.getString(3)+ ">Add to Cart</a></h3>");
         out.println("<h3><a href=\"listprod.jsp\">Continue Shopping</a></h3></div>");
-        out.println("</div>");
     }
-
+    out.println("</div>");
 
     //review
     @SuppressWarnings({"unchecked"})
@@ -82,19 +90,18 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
     //review.add(date);
     //review.add(content);
     
-    out.println("<div id=\"main\"><h2>Review on this product</h2>");
-    out.println("<table id=\"review\"><h4>Write a review for this product:</h4>");
+    out.println("<div id=\"box\"><h2>Review on this product</h2>");
+    out.println("<div id=\"review\"><h4>Write a review for this product:</h4>");
     out.println("<td><input type=\"text\" name=\"review\" size=\"50\"></td>");
-
-
-    out.println("</table>");
+    
+    out.println("</div>");
     String sql2 = "SELECT reviewRating, reviewDate, productId, reviewComment FROM review WHERE productId = '"+productId+"'";
     PreparedStatement pstmt2 = con.prepareStatement(sql2);		
     ResultSet rst2 = pstmt2.executeQuery();
     while(rst2.next()){
         out.println("<div id=\"review\">");
         out.println("<table><tr><th>Rating</th><td>"+rst2.getInt(1)+"</td><th>Reviewed on </th><td>"+rst2.getString(2)+"</td></tr>");
-        out.println("<tr><th>Comments </th><td>"+rst2.getString(4)+"</td></tr>");
+        out.println("<tr><th>Comments </th><td colspan=\"3\">"+rst2.getString(4)+"</td></tr>");
         out.println("</table></div>");
     }
     out.println("</div>");
