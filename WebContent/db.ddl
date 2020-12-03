@@ -24,6 +24,7 @@ CREATE TABLE customer (
     country             VARCHAR(40),
     userid              VARCHAR(20),
     password            VARCHAR(30),
+	admin					int,
     PRIMARY KEY (customerId)
 );
 
@@ -243,7 +244,7 @@ INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (43
 
 
 
-INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Britney', 'Bentley', 'britney.bentley@gmail.com', '647-284-5996', '980 Front Street', 'Toronto', 'ON', 'M5J 2N1', 'Canada', 'ben' , 'test1');
+INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password, admin) VALUES ('Britney', 'Bentley', 'britney.bentley@gmail.com', '647-284-5996', '980 Front Street', 'Toronto', 'ON', 'M5J 2N1', 'Canada', 'ben' , 'test1',1);
 INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Brenda', 'Kelly', 'brenda.kelly@hotmail.com', '403-884-7945', '4293 Pine Street', 'Halkirk', 'AB', 'T0C 1M0', 'Canada', 'kelly' , 'test2');
 INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Jennifer', 'Barber', 'jennifer.barber@outlook.com', '403-709-3319', '4549 Port Washington Road', 'Cochrane', 'AB', 'T0L 0W0', 'Canada', 'barber' , 'test3');
 INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Sandra', 'Jackson', 'sandra.jackson@gmail.com', '870-632-3716', '4779  Cedar Street', 'Dierks', 'AR', '71833', 'United States', 'jack' , 'test4');
