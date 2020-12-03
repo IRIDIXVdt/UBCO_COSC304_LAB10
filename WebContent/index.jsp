@@ -20,7 +20,9 @@
 	
 	<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
 	</header>
-<body>
+
+<body  background="img/bk.jpg"
+style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 
 
 <h2 align="center"><a href="login.jsp">Login</a></h2>

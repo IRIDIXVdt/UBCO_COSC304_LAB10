@@ -23,7 +23,7 @@
 	<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
 	</header>
 </head>
-<body>  <!--bgcolor="#BDBDBD"-->
+<body >  <!--bgcolor="#BDBDBD"-->
 	<style type="text/css">
 	.i{width:150px;height:150px;}
 	table{border-collapse:collapse;}
