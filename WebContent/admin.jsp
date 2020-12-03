@@ -22,8 +22,8 @@
 
 
 <body>
-    <h2 align="center"><a href="">Add new product</a></h2>
-    <h2 align="center"><a href="">delete product</a></h2>
+    <h2 align="center"><a href="warehouse.jsp">Warehouse Inventory</a></h2>
+    
 
 
 <%@ include file="jdbc.jsp" %>
