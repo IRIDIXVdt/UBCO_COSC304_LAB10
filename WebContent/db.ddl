@@ -192,11 +192,6 @@ INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Waln
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Willow Wand',3,'Willow is an uncommon wand wood with healing power, and I have noted that the ideal owner for a willow wand often has some (usually unwarranted) insecurity, however well they may try and hide it.',13.74);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Yew Wand',6,'Yew wands are among the rarer kinds, and their ideal matches are likewise unusual, and occasionally notorious. The wand of yew is reputed to endow its possessor with the power of life and death.',15.63);
 
-INSERT INTO review(reviewRating, reviewDate, productId, reviewComment) VALUES (5, '2020-11-11',1,'Very good!');
-INSERT INTO review(reviewRating, reviewDate, productId, reviewComment) VALUES (4, '2020-11-11',1,'Good!');
-INSERT INTO review(reviewRating, reviewDate, productId, reviewComment) VALUES (3, '2020-11-11',1,'Just ok.');
-INSERT INTO review(reviewRating, reviewDate, productId, reviewComment) VALUES (2, '2020-11-11',1,'Not good...');
-
 INSERT INTO warehouse(warehouseName) VALUES ('Main warehouse');
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (1, 1, 80, 20.84);
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (2, 1, 77, 14.69);
