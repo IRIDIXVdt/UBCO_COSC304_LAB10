@@ -21,7 +21,7 @@
 <body>
     <style type="text/css">
         .d{margin:0 auto;text-align:center;
-            height: 400px;
+            height: 600px;
             width: 500px;
             border: 3px solid rgb(51,204,255);
             border-radius:30px};
@@ -45,19 +45,25 @@ out.println("Signed in as: "+userName);
     <table style="display:inline">
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Name on Card:</font></div></td>
-        <td><input required="required" type="text" name="cardname"  size=30 maxlength=50></td>
+        <td><input required="required" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')" type="text" name="cardname"  size=30 maxlength=50></td>
+  
     </tr>
+    <br>
     <tr>
-        <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Credit card number:</font></div></td>
-        <td><input required="required" type="text" name="cardnumber" size=30 maxlength="16"></td>
+        <div  id = "bank" >
+            Credit card number:
+        <input  size = "4"  tabindex = "1"  maxlength = "4" minlength="4" oninput="value=value.replace(/[^\d]/g,'')" />
+        <input  size = "4"  tabindex = "2"  maxlength = "4" minlength="4" oninput="value=value.replace(/[^\d]/g,'')" />
+        <input  size = "4"  tabindex = "3"  maxlength = "4" minlength="4" oninput="value=value.replace(/[^\d]/g,'')" />
+        <input  size = "4"  tabindex = "4"  maxlength = "4" minlength="4" oninput="value=value.replace(/[^\d]/g,'')" />
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Exp Date:</font></div></td>
-        <td><input required="required" type="text" name="expdate"  size=30 maxlength=5></td>
+        <td><input required="required" type="month" name="expdate"></td>
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">CVV:</font></div></td>
-        <td><input required="required" type="text" name="cvv"  size=30 maxlength=3></td>
+        <td><input required="required" type="integer" name="cvv" oninput="value=value.replace(/[^\d]/g,'')" size=30 maxlength=3></td>
     </tr>
     
     </table>
@@ -94,7 +100,7 @@ out.println("Signed in as: "+userName);
           <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
           <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
           </form>
-     </table>>
+     </table>
 
 
 
