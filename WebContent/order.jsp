@@ -112,9 +112,10 @@
 						+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 				out.println("</table>");
 
-				out.println("<h1>Order completed. Will be shipped soon...");
+				out.println("<h1>Order completed. Will be shipped soon as long as you completed your payment");
 				out.println("<br>Your order reference number is: " + OutputOrderId);
 				out.println("<br>Shipping to customer: "+ OutputCustomerId +" Name: "+ OutputCustomerName);
+				out.println("<h2><a href=\"payment.jsp\">Click me to finish your payment</a></h2>");
 			
 
 				String totalAmountUpdatesql = "UPDATE OrderSummary SET totalAmount = ? WHERE OrderId = ?";
@@ -143,7 +144,6 @@
 			out.println(ex); 
 		}
 	%>
-	<h2><a href="shop.html">Return to Shopping</a></h2>
 	
 </body>
 </html>
