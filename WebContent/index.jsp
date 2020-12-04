@@ -18,12 +18,21 @@
 			
 	%>
 	
-	<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
+	<hr style="height:1px;border:none;border-top:3px solid rgb(22, 21, 21);" />	
 	</header>
 
-<body  background="img/bk.jpg"
+<body  background="img/bk2.jpg"
 style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
-
+<style type="text/css">
+	
+	a:hover{ color:rgb(167, 209, 16) }
+	a:link{color:rgb(51,204,255);}
+	a:visited{color:rgb(51,204,255);}
+	a { text-decoration: none;}
+	
+	.div{background-color: rgb(87, 86, 86);}
+	</style>
+<div class="div">
 
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 
@@ -37,7 +46,7 @@ style="background-repeat:no-repeat;background-size:cover;background-attachment:f
 
 <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 
-
+<div>
 </body>
 </head>
 

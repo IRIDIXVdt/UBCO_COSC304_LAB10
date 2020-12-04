@@ -2,6 +2,8 @@
 <%@ page import="java.util.*" %>
 <%@ include file="jdbc.jsp" %>
 <%@ include file="auth.jsp"%>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
 <%
@@ -44,7 +46,9 @@
 		}
 		
 		@SuppressWarnings({"unchecked"})
+		session.setAttribute("reviewList",null);
 		HashMap<String, ArrayList<Object>> reviewList = (HashMap<String, ArrayList<Object>>) session.getAttribute("reviewList");
+		
 		if (reviewList == null)
 		{	// No products currently in list.  Create a list.
 			reviewList = new HashMap<String, ArrayList<Object>>();
@@ -57,7 +61,7 @@
 		review.add(customerId);
 			
 		reviewList.put(customerId,review);
-		session.setAttribute("review", reviewList);
+		session.setAttribute("reviewList",reviewList);
 		return retStr;
 	}
 %>

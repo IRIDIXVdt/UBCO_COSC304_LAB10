@@ -18,6 +18,11 @@
 		NumberFormat currFormat = NumberFormat.getCurrencyInstance(Locale.US);
 		String custId = request.getParameter("customerId");// Get customer id
 		String custPass = request.getParameter("customerpassword");//Get customer password
+		
+		session.setAttribute("custId",custId);
+		session.setAttribute("custPass",custPass);
+		
+		
 		@SuppressWarnings({"unchecked"})
 		HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session.getAttribute("productList");
 
@@ -37,7 +42,7 @@
 					passValid= true;
 			}		
 			if( productList.size() != 0 && idValid && passValid){//Then the inputs are valid, we will start saving order information to database
-				//String DMLInsertOrder = "INSERT INTO ordersummary (customerId, orderDate, totalAmount) VALUES (?, NOW(), ?)";
+				
 
 				String OutputCustomerId = custId;
 				int OutputOrderId = -1;
@@ -52,11 +57,7 @@
 				out.println("<th>Price</th><th>Subtotal</th></tr>");
 
 				//print the first line 
-				String orderSummarySQL = "INSERT INTO ordersummary (customerId, orderDate, totalAmount) VALUES (?, current_timestamp, ?)";
-				PreparedStatement summaryStatement = con.prepareStatement(orderSummarySQL);
-				summaryStatement.setString(1,OutputCustomerId);
-				summaryStatement.setInt(2,-1);//totalAmount not yet set
-				summaryStatement.executeUpdate();
+				
 
 				//get orderId
 				rst = stmt.executeQuery("SELECT orderId FROM OrderSummary ORDER BY orderId DESC");
@@ -100,33 +101,21 @@
 					out.println("</tr>");
 
 					total = total +pr*qty;
-					String orderProductsql = "INSERT INTO orderproduct (orderId, productId, quantity, price) VALUES (?, ?, ?, ?)";
-					PreparedStatement orderStatement = con.prepareStatement(orderProductsql);
-					orderStatement.setInt(1, OutputOrderId);
-					orderStatement.setInt(2, Integer.parseInt(product.get(0).toString()));
-					orderStatement.setDouble(3, qty);
-					orderStatement.setDouble(4, pr);
-					orderStatement.executeUpdate();
+					
 				}
 				out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>"
 						+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 				out.println("</table>");
 
-				out.println("<h1>Order completed. Will be shipped soon as long as you completed your payment");
-				out.println("<br>Your order reference number is: " + OutputOrderId);
-				out.println("<br>Shipping to customer: "+ OutputCustomerId +" Name: "+ OutputCustomerName);
+				
 				out.println("<h2><a href=\"payment.jsp\">Click me to finish your payment</a></h2>");
 			
 
-				String totalAmountUpdatesql = "UPDATE OrderSummary SET totalAmount = ? WHERE OrderId = ?";
-				PreparedStatement totalAmountUpdate = con.prepareStatement(totalAmountUpdatesql);
-				totalAmountUpdate.setDouble(1, total);
-				totalAmountUpdate.setInt(2, OutputOrderId);//totalAmount not yet set
-				totalAmountUpdate.executeUpdate();
+				
 
 				//out.println("<br><a href=listprod.jsp> Return to Shopping </a></h1></tr>");
 				// Clear cart if order placed successfully	
-				session.setAttribute("productList", new HashMap<String, ArrayList<Object>>() );
+				//session.setAttribute("productList", new HashMap<String, ArrayList<Object>>() );
 			} 
 			else if(productList.size() == 0){
 			
