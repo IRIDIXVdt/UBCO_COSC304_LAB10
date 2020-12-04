@@ -30,9 +30,20 @@ style="background-repeat:no-repeat;background-size:cover;background-attachment:f
 	a:visited{color:rgb(51,204,255);}
 	a { text-decoration: none;}
 	
-	.div{background-color: rgb(87, 86, 86);}
+	.div{background-color: rgba(0,0,0,0.3);  
+	border:1px solid #e7eaf1; 
+	border-radius:2px; 
+	box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+	box-sizing: border-box;
+	width: 500px;
+	margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+	}
+
+	
 	</style>
-<div class="div">
+<div class="div" width=200px; height=1000px;>
 
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 
