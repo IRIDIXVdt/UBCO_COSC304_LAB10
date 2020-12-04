@@ -28,7 +28,7 @@
     String postalCode = request.getParameter("postalCode");
     
 
-    userName = (String) session.getAttribute("authenticatedUser");
+    username = (String) session.getAttribute("authenticatedUser");
 
     
 
@@ -44,7 +44,7 @@
         stmt.setString(3,state);
         stmt.setString(4,postalCode);
         stmt.setString(5,country);
-        stmt.setString(6,userName);
+        stmt.setString(6,username);
         
         stmt.executeUpdate();
         out.println("<h2 align=\"center\">Succussful edit your address, back to<a href=\"customer.jsp\">Customer Info</a></h2>");

@@ -14,7 +14,7 @@
 	<title>Ollivender's Magical Wand Shop WareHouse</title>
 </head>
 <body>
-    <script text="javaScript">
+    <script type ="text/javascript">
         function welcome(){
         alert("Update Successfull!");
         }
@@ -49,7 +49,7 @@
                 while(rstInven.next()){
                     out.println("<tr><th>"+rstInven.getInt(1)+"</th><th>"+rstInven.getString(2)+"</th>"
                         + "<form name=MyInventory method=post action=updateInventory.jsp>"
-                        + "<th><input type=text name=pnq value="+rstInven.getInt(3)+" size=10 maxlength=10></th>"
+                        + "<th><input type=text name=pnq value="+rstInven.getInt(3)+" size=10 maxlength=10 pattern=\"[0-9]{10}\" title=\"must be digits\"></th>"
                         + "<input type=hidden name=pid value = "+rstInven.getInt(1)+">"
                         + "<input type=hidden name=pwi value ="+RSTwarehouseId+">"
                         + "<th><input class=submit type=submit name=Submit3 value=\"Update Inventory\"></th>"

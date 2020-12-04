@@ -24,7 +24,7 @@
     String email = request.getParameter("email");
     String phonenum = request.getParameter("phonenum");
     
-    userName = (String) session.getAttribute("authenticatedUser");
+    
 
 	try
 	{
@@ -36,7 +36,7 @@
         stmt.setString(2,lastName);
         stmt.setString(3,email);
         stmt.setString(4,phonenum);
-        stmt.setString(5,userName);
+        stmt.setString(5,username);
         
         
         stmt.executeUpdate();

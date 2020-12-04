@@ -24,7 +24,7 @@
     boolean validPassword = false;
     boolean emptyPassword = true;
     boolean matchPassword = false;
-    userName = (String) session.getAttribute("authenticatedUser");
+    username = (String) session.getAttribute("authenticatedUser");
 
     
 
@@ -36,12 +36,12 @@
         String sql = "update customer set password=? where userid = ? ";
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1,editpassword);
-        stmt.setString(2,userName);
+        stmt.setString(2,username);
 
 
         String sql2 = "select password from customer where userid =? ";
         PreparedStatement stmt2 = con.prepareStatement(sql2);
-        stmt2.setString(1,userName);
+        stmt2.setString(1,username);
         ResultSet rst = stmt2.executeQuery();
         if(editpassword!=null && oldpassword != null){
             emptyPassword = false;

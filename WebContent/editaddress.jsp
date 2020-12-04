@@ -49,19 +49,19 @@ out.println("Signed in as: "+userName);
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Your new city:</font></div></td>
-        <td><input required="required" type="text" name="city" size=30 maxlength="10"></td>
+        <td><input required="required" type="text" name="city" size=30 maxlength="10" pattern="[a-zA-Z]{1,20}" title="Only letter"></td>
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Your new state:</font></div></td>
-        <td><input required="required" type="text" name="state"  size=30 maxlength=50></td>
+        <td><input required="required" type="text" name="state"  size=30 maxlength=30 pattern="[a-zA-Z]{1,20}" title="Only letter"></td>
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Your new country:</font></div></td>
-        <td><input required="required" type="text" name="country"  size=30 maxlength=50></td>
+        <td><input required="required" type="text" name="country"  size=30 maxlength=30 pattern="[a-zA-Z]{1,20}" title="Only letter"></td>
     </tr>
     <tr>
         <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Your new postalCode:</font></div></td>
-        <td><input required="required" type="text" name="postalCode"  size=30 maxlength=50></td>
+        <td><input required="required" type="text" name="postalCode"  size=30 maxlength=20></td>
     </tr>
     </table>
     <br/>
