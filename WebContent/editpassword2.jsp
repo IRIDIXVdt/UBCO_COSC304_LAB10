@@ -59,17 +59,17 @@
         }
             
         if(emptyPassword){
-            out.println("<h2 align=\"center\">Sorry, unsuccussful update - no new password or old password entered, back to<a href=\"customer.jsp\">Customer Info</a></h2>");
+            out.println("<h2 align=\"center\">Sorry, unsuccussful update - no new password or old password entered, back to <a href=\"customer.jsp\">Customer Info</a></h2>");
         }
         else if(matchPassword &&validPassword){
             stmt.executeUpdate();
             out.println("<h2 align=\"center\">Succussful edit your password, back to<a href=\"customer.jsp\">Customer Info</a></h2>");
         }
         else if(!matchPassword){
-            out.println("<h2 align=\"center\">Sorry, unsuccussful update - new password does not matches old password, back to<a href=\"customer.jsp\">Customer Info</a></h2>");
+            out.println("<h2 align=\"center\">Sorry, unsuccussful update - password does not match the old password, back to <a href=\"customer.jsp\">Customer Info</a></h2>");
         }
         else if(!validPassword){
-            out.println("<h2 align=\"center\">Sorry, unsuccussful update - password must contians 1 letter, back to<a href=\"customer.jsp\">Customer Info</a></h2>");
+            out.println("<h2 align=\"center\">Sorry, unsuccussful update - password must contian 1 letter, back to <a href=\"customer.jsp\">Customer Info</a></h2>");
         }
         else{
             out.println("");
