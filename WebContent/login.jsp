@@ -50,7 +50,7 @@ if (session.getAttribute("loginMessage") != null)
 </div>
 
 
-<h2 align="center"><a href="register.jsp">registe your account!!!</a></h2>
+<h2 align="center"><a href="register.jsp">Register your account!!!</a></h2>
 
 <h2 align="center"><a href="findpassword.jsp">Forgot your password?</a></h2>
 
