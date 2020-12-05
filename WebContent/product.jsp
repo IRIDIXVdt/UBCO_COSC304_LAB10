@@ -60,7 +60,7 @@ NumberFormat currFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
 
 try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the connection	
-    String sql = "SELECT product.productId, productName, productPrice, productImageURL, quantity, productDesc FROM product JOIN productinventory ON product.productId = productinventory.productId WHERE product.productId = '"+productId+"'";
+    String sql = "SELECT product.productId, productName, productPrice, productImageURL, SUM(quantity) AS totalQ, productDesc FROM product JOIN productinventory ON product.productId = productinventory.productId WHERE product.productId = '"+productId+"' GROUP BY product.productId, productName, productPrice, productImageURL, productDesc";
     PreparedStatement pstmt = con.prepareStatement(sql);		
     ResultSet rst = pstmt.executeQuery();
     
@@ -104,7 +104,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the
     ResultSet rst2 = pstmt2.executeQuery();
     while(rst2.next()){
         out.println("<div id=\"review\">");
-        out.println("<table><tr><th>Rating</th><td>"+rst2.getInt(1)+"</td><th>Reviewed on </th><td>"+rst2.getString(2)+"</td></tr>");
+        out.println("<table><tr><th>Rating</th><td>"+rst2.getInt(1)+"</td><th>Reviewed at</th><td>"+rst2.getString(2)+"</td></tr>");
         out.println("<tr><th>Comments </th><td colspan=\"3\">"+rst2.getString(4)+"</td></tr>");
         out.println("</table></div>");
     }

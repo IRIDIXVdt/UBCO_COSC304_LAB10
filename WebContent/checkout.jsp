@@ -11,7 +11,7 @@
 <body>
 <form method="get" action="order.jsp">
           <table align="center">
-            <h3 align="center" color="33CCFF"><font face="cursive" color="#3399FF">Please Enter your Customer ID and Password to login</font></h3>                    
+            <h3 align="center" color="33CCFF"><font face="cursive" color="#3399FF">Please Enter your Customer ID and Password to confirm</font></h3>                    
                 
                 <tr><td>Customer ID:</td><td><input type="text" name="customerId" size="20"></td></tr>
                 <tr><td>Password:</td><td><input type="password" name="customerpassword" size="20"></td></tr>

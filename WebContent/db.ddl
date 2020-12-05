@@ -193,6 +193,7 @@ INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Will
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Yew Wand',6,'Yew wands are among the rarer kinds, and their ideal matches are likewise unusual, and occasionally notorious. The wand of yew is reputed to endow its possessor with the power of life and death.',15.63);
 
 INSERT INTO warehouse(warehouseName) VALUES ('Main warehouse');
+INSERT INTO warehouse(warehouseName) VALUES ('Backup warehouse');
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (1, 1, 80, 20.84);
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (2, 1, 77, 14.69);
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (3, 1, 67, 19.55);
@@ -236,6 +237,51 @@ INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (40
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (41, 1, 76, 23.62);
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (42, 1, 47, 13.74);
 INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (43, 1, 75, 15.63);
+
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (1, 2, 10, 20.84);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (2, 2, 10, 14.69);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (3, 2, 10, 19.55);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (4, 2, 10, 22.56);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (5, 2, 10, 11.93);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (6, 2, 10, 12.66);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (7, 2, 10, 14.02);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (8, 2, 10, 10.50);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (9, 2, 10, 24.56);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (10, 2, 10, 11.73);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (11, 2, 10, 11.53);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (12, 2, 10, 12.60);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (13, 2, 10, 13.95);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (14, 2, 10, 7.96);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (15, 2, 10, 9.53);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (16, 2, 10, 17.84);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (17, 2, 10, 24.63);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (18, 2, 10, 14.73);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (19, 2, 10, 12.92);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (20, 2, 10, 14.12);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (21, 2, 10, 16.66);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (22, 2, 10, 6.68);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (23, 2, 10, 13.11);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (24, 2, 10, 11.51);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (25, 2, 10, 20.70);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (26, 2, 10, 21.79);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (27, 2, 10, 10.89);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (28, 2, 10, 16.98);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (29, 2, 10, 23.49);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (30, 2, 10, 21.54);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (31, 2, 10, 21.61);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (32, 2, 10, 17.4);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (33, 2, 10, 16.89);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (34, 2, 10, 16.75);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (35, 2, 10, 15.39);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (36, 2, 10, 10.87);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (37, 2, 10, 14.09);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (38, 2, 10, 23.18);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (39, 2, 10, 16.41);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (40, 2, 10, 7.47);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (41, 2, 10, 23.62);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (42, 2, 10, 13.74);
+INSERT INTO productinventory(productId, warehouseId, quantity, price) VALUES (43, 2, 10, 15.63);
+
 
 
 
