@@ -3,31 +3,17 @@
 <head>
         <title>Ollivender's Magical Wand Shop</title>
 </head>
-<head>
-	<title>Ollivender's Magical Wand Shop</title>
-	<header>
-		<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-			<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-	<%
-		// show current logged user
-		String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-		if(username != null){
-			out.print("<h4 align=\"center\">welcome!</h4>");
-        	out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
-		}
-			
-	%>
+<%@ include file="header.jsp" %>
 	
-	<hr style="height:1px;border:none;border-top:3px solid rgb(22, 21, 21);" />	
-	</header>
+	
 
 <body  background="img/bk2.jpg"
 style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 <style type="text/css">
 	
-	a:hover{ color:rgb(167, 209, 16) }
-	a:link{color:rgb(51,204,255);}
-	a:visited{color:rgb(51,204,255);}
+	a:hover{ color:rgb(250, 250, 250);font-family: Arial, Helvetica, sans-serif; font-size: 35px; text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:link{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:visited{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
 	a { text-decoration: none;}
 	
 	.div{background-color: rgba(0,0,0,0.3);  
@@ -40,7 +26,15 @@ style="background-repeat:no-repeat;background-size:cover;background-attachment:f
     margin-left:auto;
     margin-right:auto;
 	}
+	
+	
 
+	p { font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+	font-variant: small-caps; font-weight: 400;  
+	color:rgb(255, 255, 255);
+	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; }
+	
+	
 	
 	</style>
 <div class="div" width=200px; height=1000px;>
