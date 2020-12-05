@@ -98,9 +98,9 @@
 		String pw = "YourStrong@Passw0rd";
 
 		try ( Connection con = DriverManager.getConnection(url, uid, pw);) {	// Make the connection
-			String sql1 = "SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%"+name+"%'";
-			String sql2 = "SELECT productId, productName, productPrice FROM product join category on product.categoryId = category.categoryId WHERE productName LIKE '%"+name+"%' and categoryName = '"+category+"'";
-			String sql3 = "SELECT productId, productName, productPrice FROM product WHERE productName LIKE '%"+name+"%'";
+			String sql1 = "SELECT productId, productName, productPrice,productImageURL FROM product WHERE productName LIKE '%"+name+"%'";
+			String sql2 = "SELECT productId, productName, productPrice,productImageURL FROM product join category on product.categoryId = category.categoryId WHERE productName LIKE '%"+name+"%' and categoryName = '"+category+"'";
+			String sql3 = "SELECT productId, productName, productPrice,productImageURL FROM product WHERE productName LIKE '%"+name+"%'";
 			PreparedStatement pstmt;
 			if(category == null)
 				pstmt = con.prepareStatement(sql1);	
@@ -117,7 +117,11 @@
 				pstmt2.setString(1,rst.getString(2));
 				ResultSet rst2 = pstmt2.executeQuery();	
 				//add cart option
-				out.print("<tr><td><div><img src=\"img/"+rst.getInt(1)+".jpg\" class =\"i\"></div><a href=addcart.jsp?id="+rst.getInt(1)+"&name="+nameReplace+"&price="+rst.getString(3)+" class =\"b\">Add to Cart</a></td><td>"
+				String imageurl ="";
+				if(rst.getString(4) != null ){
+					imageurl= rst.getString(4);
+				}
+				out.print("<tr><td><div><img src=\" "+ imageurl+" \" class=\"i\"></div><a href=addcart.jsp?id="+rst.getInt(1)+"&name="+nameReplace+"&price="+rst.getString(3)+" class =\"b\">Add to Cart</a></td><td>"
 					+ "<a href=product.jsp?id=" + rst.getInt(1)+" class =\"c\">"+rst.getString(2) + "</a></td><td>");
 				if(rst2.next())		
 					out.println(rst2.getString(1)+"</td><td>" + currFormat.format(rst.getDouble(3)) +"</td></tr>"+"\n");	
