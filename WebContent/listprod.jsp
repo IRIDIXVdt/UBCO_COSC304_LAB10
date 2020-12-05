@@ -55,8 +55,16 @@
 	font-variant: small-caps; font-weight: 400;  
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
-
-
+	}
+	table{
+		margin-top:20px;
+		border:2px solid rgb(255, 255, 255); 
+		border-radius:2px; 
+		border-collapse:collapse;
+		margin-bottom: 20px;
+	}
+	td{
+		text-align: center;
 	}
 
 	</style>
