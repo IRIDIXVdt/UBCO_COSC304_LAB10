@@ -10,25 +10,59 @@
 <title>Magic Wand Shop Order List</title>
 
 </head>
-<header>
-	<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-		<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-<%
-	// show current logged user
-	String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-	if(username != null){
-		out.print("<h4 align=\"center\">welcome!</h4>");
-		out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
-	}
-		
-%>
 
-<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-</header>
-<body>
+<%@ include file="header.jsp" %>
+<style>
+	h1{
+		font-family: CenturyGothic; font-size: 50px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+	}
+	div{
+		background-color: rgba(0,0,0,0.3);  
+		border:1px solid #e7eaf1; 
+		border-radius:2px; 
+		box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+		box-sizing: border-box;
+		width: 700px;
+		margin-top:20px;
+    	margin-left:auto;
+    	margin-right:auto;
+	}
+
+	table{
+		margin-top:20px;
+		border:2px solid rgb(255, 255, 255); 
+		border-radius:2px; 
+		border-collapse:collapse;
+		margin-bottom: 20px;
+	}
+
+	th{
+		font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+	}
+
+	td{
+		font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-style: normal; 
+		text-align:center;
+		color:rgba(255, 255, 255, 0.829);
+		text-shadow: 0 0 8px #68646494, 0 0 8px #9b90908f;
+	}
+	.t{
+		margin-left:32%;
+		margin-bottom: 20px;
+		position: relative;
+	}
+	
+</style>
+<body background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 
 <h1 align="center">Order List</h1>
-
+<div>
 <%
 //Note: Forces loading of SQL Server driver
 try
@@ -66,20 +100,20 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 	ResultSet rst = stmt.executeQuery("SELECT orderId, orderDate, customer.customerId, firstName, lastName, totalAmount FROM ordersummary JOIN customer ON ordersummary.customerId = customer.customerId");		
 	String sql = "SELECT productId, quantity, price FROM orderproduct JOIN ordersummary ON orderproduct.orderId = ordersummary.orderId WHERE ordersummary.orderId = ?";
 	PreparedStatement pstmt = con.prepareStatement(sql);
-	out.println("<table border=\"1\" align=\"center\"><tr><th>Order Id</th><th>Order Date</th><th>Customer Id</th><th>Customer Name</th><th>Total Amount</th></tr>");
+	out.println("<table align=\"center\" border= \"1\"><tr><th>Order Id</th><th>Order Date</th><th>Customer Id</th><th>Customer Name</th><th>Total Amount</th></tr>");
 	while (rst.next()){
 			out.println("<tr><td>"+rst.getInt(1)+"</td>"+"<td>"+rst.getString(2)+"</td>"+"<td>"+rst.getString(3)+"</td>"+"<td>"+rst.getString(4)+ " " + rst.getString(5)+"</td>"+"<td>"+currFormat.format(rst.getDouble(6))+"</td></tr>");
 			
 			pstmt.setInt(1, rst.getInt(1));
 			ResultSet rst2 = pstmt.executeQuery();
-			out.println("<tr align=\"right\"><td colspan=\"5\"><table border=\"1\">");
+			out.println("<tr align=\"right\"><td colspan=\"5\"><table border= \"1\" class=\"t\">" );
 			out.println("<tr><th>Product Id</th><th>Quantity</th><th>Price</th></tr>");
 			while(rst2.next()){
 				out.println("<tr><td>"+rst2.getInt(1)+"</td>"+"<td>"+rst2.getInt(2)+"</td>"+"<td>"+currFormat.format(rst2.getDouble(3))+"</td></tr>");
 			}
 			out.println("</tr></td></table>");
 	}
-	out.println("</table>");
+	out.println("</table></div>");
 }
 catch (SQLException ex) 
 { 	out.println(ex); 

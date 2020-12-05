@@ -22,10 +22,6 @@
 	.b{text-decoration: none;}
 	.c{text-decoration: none;}
 
-	h1 { font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; line-height: 120px; 
-	color:rgb(255, 255, 255);
-	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; }
 	
 	
 	h2 { font-family: CenturyGothic; font-size: 40px; font-style: normal; 

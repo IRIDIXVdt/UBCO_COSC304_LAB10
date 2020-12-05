@@ -3,22 +3,57 @@
 <head>
 <title>Customer Page</title>
 </head>
-<header>
-	<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-		<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-<%
-	// show current logged user
-	String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-	if(username != null){
-		out.print("<h4 align=\"center\">welcome!</h4>");
-		out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
-	}
-		
-%>
+<%@ include file="header.jsp" %>
+<style>
 
-<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-</header>
-<body>
+	h3{
+		font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+	}
+	div{
+		background-color: rgba(0,0,0,0.3);  
+		border:1px solid #e7eaf1; 
+		border-radius:2px; 
+		box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+		box-sizing: border-box;
+		width: 700px;
+		margin-top:20px;
+    	margin-left:auto;
+    	margin-right:auto;
+	}
+
+	table{
+		margin-top:20px;
+		border:2px solid rgb(211, 209, 209); 
+		border-radius:2px; 
+		border-collapse:collapse;
+		
+	}
+
+	th{
+		font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		
+	}
+
+	td{
+		font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-style: normal; 
+		
+		color:rgba(255, 255, 255, 0.829);
+		text-shadow: 0 0 8px #68646494, 0 0 8px #9b90908f;
+	}
+	a:hover{ color:rgb(250, 250, 250);font-family: Arial, Helvetica, sans-serif; font-size: 30px; text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:link{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 30px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:visited{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 30px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a { text-decoration: none;}
+</style>
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
+
 
 <%@ include file="auth.jsp"%>
 <%@ page import="java.text.NumberFormat" %>
@@ -29,14 +64,14 @@
 	String userName = (String) session.getAttribute("authenticatedUser");// get user name from authenticatedUser
 %>
 
-<%
+
 
 // TODO: Print Customer information
 
 
-out.println("<h3 align=\"center\" >Customer Profile</h3>");
-
-
+<h3 align="center" >Customer Profile</h3>
+<div>
+<%
 try {	// Make the connection	
 	getConnection();
 	//get customerId
@@ -105,6 +140,8 @@ try {	// Make the connection
 <h2 align="center"><a href="editaddress.jsp">Edit Your address click here</a></h2>
 <h2 align="center"><a href="editpassword.jsp">Edit Your password click here</a></h2>
 <h2 align="center"><a href="editinfo.jsp">Edit Your personal information click here</a></h2>
+
+</div>
 </body>
 </html>
 

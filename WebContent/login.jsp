@@ -3,26 +3,61 @@
 <head>
 <title>Login Screen</title>
 </head>
-<header>
-	<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-		<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-<%
-	// show current logged user
-	String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-	if(username != null){
-		out.print("<h4 align=\"center\">welcome!</h4>");
-		out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
+<%@ include file="header.jsp" %>
+<style type="text/css">
+	.all{background-color: rgba(0,0,0,0.3);  
+		border:1px solid #e7eaf1; 
+		border-radius:2px; 
+		box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+		box-sizing: border-box;
+		width: 700px;
+		margin-top:20px;
+		margin-left:auto;
+		margin-right:auto;}
+	
+	h1{
+		font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
 	}
+	form{
+		margin-left:22%;
+	}
+	.submit{
+		margin-left: 30%;
+		font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(2, 2, 2);
+		text-shadow: 0 0 5px #da7a6a, 0 0 5px #dd7c7c;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-radius:5px
+	}
+	
+	td{
+		font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;		    
 		
-%>
+	}
+	a:hover{ color:rgb(250, 250, 250);font-family: Arial, Helvetica, sans-serif; font-size: 30px; text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:link{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 30px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a:visited{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 30px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	a { text-decoration: none;}
+	</style>
 
-<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-</header>
-<body>
 
-<div style="margin:0 auto;text-align:center;display:inline">
+
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
+
+
 
 <h3>Please Login to System</h3>
+<div class="all">
 <%@ include file="jdbc.jsp" %>
 
 <%
@@ -35,25 +70,25 @@ if (session.getAttribute("loginMessage") != null)
 <form name="MyForm" method=post action="validateLogin.jsp">
 <table style="display:inline">
 <tr>
-	<td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Username:</font></div></td>
-	<td><input type="text" required="required" name="username"  size=10 maxlength=10></td>
+	<td><div align="right">Username:</div></td>
+	<td><input type="text" required="required" name="username"  size=30 maxlength=10></td>
 </tr>
 <tr>
-	<td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Password:</font></div></td>
-	<td><input type="password" required="required" name="password" size=10 maxlength="10"></td>
+	<td><div align="right">Password:</div></td>
+	<td><input type="password" required="required" name="password" size=30 maxlength="10"></td>
 </tr>
 </table>
 <br/>
 <input class="submit" type="submit" name="Submit2" value="Log In">
 </form>
 
-</div>
+
 
 
 <h2 align="center"><a href="register.jsp">Register your account!!!</a></h2>
 
 <h2 align="center"><a href="findpassword.jsp">Forgot your password?</a></h2>
-
+</div>
 </body>
 </html>
 

@@ -3,12 +3,8 @@
 <head>
     <title>Ollivender's Magical Wand Shop Checkout</title>
 </head>
-<header>
-    <h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-        <a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-        <hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-    </header>
-<body>
+<%@ include file="header.jsp" %>
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 <form method="get" action="order.jsp">
           <table align="center">
             <h3 align="center" color="33CCFF"><font face="cursive" color="#3399FF">Please Enter your Customer ID and Password to confirm</font></h3>                    
