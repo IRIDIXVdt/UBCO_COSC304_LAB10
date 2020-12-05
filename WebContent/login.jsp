@@ -23,6 +23,22 @@
 		margin-top: 0px;
 		text-align: center;
 	}
+	h3{
+		font-family: CenturyGothic; font-size: 30px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
+	}
+	p{
+		font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+		font-variant: small-caps;  
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
+	}
 	form{
 		margin-left:22%;
 	}
@@ -54,17 +70,17 @@
 
 <body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 
-
-
-<h3>Please Login to System</h3>
-<div class="all">
-<%@ include file="jdbc.jsp" %>
-
 <%
 // Print prior error login message if present
 if (session.getAttribute("loginMessage") != null)
 	out.println("<p>"+session.getAttribute("loginMessage").toString()+"</p>");
 %>
+
+<h3>Please Login to System</h3>
+<div class="all">
+<%@ include file="jdbc.jsp" %>
+
+
 
 <br>
 <form name="MyForm" method=post action="validateLogin.jsp">
