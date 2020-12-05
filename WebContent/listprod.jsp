@@ -7,21 +7,7 @@
 <html>
 <head>
 	<title>Ollivender's Magical Wand Shop</title>
-	<header>
-		<h1 align="center" color="33CCFF">
-			<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></h1>
-	<%
-		// show current logged user
-		String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-		if(username != null){
-			out.println("<p align=\"center\">welcome!"+"<br>");
-				out.println("Signed in as: "+username+"</p>");
-		}
-			
-	%>
-	
-	<hr style="height:1px;border:none;border-top:5px solid rgb(0, 0, 0);" />	
-	</header>
+	<%@ include file="header.jsp" %>
 </head>
 <body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
 

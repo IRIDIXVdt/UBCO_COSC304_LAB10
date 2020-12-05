@@ -7,29 +7,27 @@
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; }
 
-    
-
-    .title:hover{ font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; line-height: 120px; 
+    /* .title:hover{ font-family: CenturyGothic; font-size: 80px; font-style: normal; 
+	font-variant: small-caps; font-weight: 400; 
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; }
 	
     .title:link{font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; line-height: 120px; 
+	font-variant: small-caps; font-weight: 400;  
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;}
 	
     .title:visited{font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; line-height: 120px; 
+	font-variant: small-caps; font-weight: 400; 
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;}
-	.title { text-decoration: none;}
+	.title { text-decoration: none;} */
 
 </style>
 
 <header>
     <h1 align="center">
-        <a href="index.jsp" class ="title">Ollivender's Magical Wand Shop</a></h1>
+        <a href="index.jsp" class ="title"><img src="img/title.png"></a></h1>
 <%
     // show current logged user
     String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
