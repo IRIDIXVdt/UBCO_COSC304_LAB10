@@ -29,7 +29,7 @@
 
 <header>
     <h1 align="center">
-        <a href="index.jsp" class ="title"><img src="img/title.png" width="1700"></a></h1>
+        <a href="index.jsp" class ="title"><img src="img/title.png" width=100%></a></h1>
 <%
     // show current logged user
     String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
