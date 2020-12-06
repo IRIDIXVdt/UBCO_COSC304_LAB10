@@ -12,7 +12,6 @@
 <html>
 <head>
     <title>Ollivender's Magical Wand Shop WareHouse</title>
-    <link rel="stylesheet" href="denglu.css">
 </head>
 
 <style>
@@ -101,6 +100,17 @@
         text-align: center;
         
     }  
+    .input [type = submit]{
+    background: transparent;
+    border:none;
+    outline:none;
+    font-size: 16px;
+    color:rgb(255, 0, 0);
+    background: #03a9f4;
+    padding:15px 20px;
+    cursor: pointer;
+    border-radius:10px; 
+    }
     
 </style>
 
@@ -139,7 +149,7 @@
                 out.print("<table class = review><tr class = detailTitle><th>Product Id</th><th>Product Name</th><th size=10>Quantity</th><th>Individual Update</th></tr>");
                 while(rstInven.next()){
                     out.println("<tr class = detail><th>"+rstInven.getInt(1)+"</th><th>"+rstInven.getString(2)+"</th>"
-                        + "<div class = box><form name=MyInventory method=post action=updateInventory.jsp>"
+                        + "<div><form name=MyInventory method=post action=updateInventory.jsp>"
                         + "<th><input type=text name=pnq value="+rstInven.getInt(3)+" size=10 maxlength=10 </th>"//pattern=\"[0-9]{10}\" title=\"must be digits\">
                         + "<input type=hidden name=pid value = "+rstInven.getInt(1)+">"
                         + "<input type=hidden name=pwi value ="+RSTwarehouseId+">"

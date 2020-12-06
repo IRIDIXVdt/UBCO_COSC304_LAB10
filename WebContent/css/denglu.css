@@ -10,7 +10,6 @@ body{
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    /*实现块元素百分比下居中*/
     width:450px;
     padding:50px;
     background: rgba(0,0,0,.8);
