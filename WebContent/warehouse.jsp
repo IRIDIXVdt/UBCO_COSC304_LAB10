@@ -55,7 +55,7 @@
     .desc:hover{
         font-family: CenturyGothic; font-size: 30px; font-style: normal; 
 	    font-variant: small-caps; font-weight: 400;  
-	    color:rgb(255, 255, 255);
+	    color:rgb(255, 249, 225);
 	    text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
     }
     .pname{font-family: CenturyGothic; font-size: 40px; font-style: normal; 
@@ -153,7 +153,7 @@
                         + "<th><input type=text name=pnq value="+rstInven.getInt(3)+" size=10 maxlength=10 </th>"//pattern=\"[0-9]{10}\" title=\"must be digits\">
                         + "<input type=hidden name=pid value = "+rstInven.getInt(1)+">"
                         + "<input type=hidden name=pwi value ="+RSTwarehouseId+">"
-                        + "<th><input class=submit type=submit name=Submit3 value=\"Update Inventory\"></th>"
+                        + "<th><input class=submit type=submit name=Submit3 style = \"width:120px;background-color:rgb(255, 249, 225);outline:none;border:none;cursor:pointer;padding:5px 8px;border-radius:8px;font-family: Arial, Helvetica, sans-serif; font-size: 12px; \" value=\"Update Inventory\"></th>"
                         + "</form>"
                         //+rstInven.getInt(3)+
                         +"</tr></div>");
