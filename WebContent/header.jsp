@@ -6,41 +6,36 @@
 	font-variant: small-caps; font-weight: 400;  
 	color:rgb(255, 255, 255);
 	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; 
-	margin-top:-50px;}
+	margin-top:-80px;}
 
-    /* .title:hover{ font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; 
-	color:rgb(255, 255, 255);
-	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000; }
+    .cart:hover{ color:rgb(250, 250, 250);font-family: Arial, Helvetica, sans-serif; font-size: 35px; text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	.cart:link{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	.cart:visited{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fc0000;}
+	.cart { text-decoration: none;}
 	
-    .title:link{font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400;  
-	color:rgb(255, 255, 255);
-	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;}
-	
-    .title:visited{font-family: CenturyGothic; font-size: 80px; font-style: normal; 
-	font-variant: small-caps; font-weight: 400; 
-	color:rgb(255, 255, 255);
-	text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;}
-	.title { text-decoration: none;} */
-	
-	
+	.hr{
+		margin-top:-30px;
+	}
+	.h1{
+		margin-top:-20px;
+	}
 </style>
 
 <header>
-    <h1 align="center">
-        <a href="index.jsp" class ="title"><img src="img/title.png" width=100%></a></h1>
+    <h1 align="center" class="h1">
+        <a href="index.jsp" ><img src="img/title.png" width=100%></a></h1>
 <%
     // show current logged user
     String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
     if(username != null){
         out.println("<p align=\"center\" class=\"p\">welcome!"+"<br>");
-			out.println("Signed in as: "+username+"</p>");
+		out.println("Signed in as: "+username);
+		out.println("<br><a href=\"showcart.jsp\" class=\"cart\">My Cart</a></p>");
     }
         
 %>
 
-<hr style="height:1px;border:none;border-top:5px solid rgb(0, 0, 0);" />	
+<hr class="hr" style="height:1px;border:none;border-top:5px solid rgb(0, 0, 0);" />	
 </header>
 
 
