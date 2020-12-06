@@ -1,3 +1,5 @@
+
+
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.ArrayList" %>
@@ -7,10 +9,43 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
 <head>
-<title>Your Shopping Cart</title>
+<title><h1>Your Shopping Cart</h1>></title>
 </head>
-<body>
+<%@ include file="header.jsp" %>
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;"></body>
+    <style>
+        h2,h1{
+		font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
+	}
+    table{
+        background-color: rgba(0,0,0,0.3);  
+	    border:1px solid #e7eaf1; 
+	    border-radius:5px; 
+	    box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+	    box-sizing: border-box;
+	    width: 400px;
+	    margin-top:20px;
+        margin-left:auto;
+        margin-right:auto;
+		vertical-align: middle;
+    }
+    tr,td{
+			font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+			font-variant: small-caps; font-weight: 400; 
+			color:rgb(255, 255, 255);
+			text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;		    
+			
+		}
+    
+    </style>
 
 <%
 // Get the current list of products

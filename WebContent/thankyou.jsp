@@ -10,19 +10,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Ollivender's Magical Wand Shop</title>
+	<%@ include file="header.jsp" %>
 </head>
-<head>
-	<title>Ollivender's Magical Wand Shop</title>
-	<header>
-		<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-            <a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-            <hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-        </header>
-            <body>
-            <h1 align="center"  color="33CCFF"><font face="cursive" color="#3399FF"> Thank you for your shopping! Have a nice day!</font></h1>
-            <h2 align="center"><a href="index.jsp">Return to the main page</a></h2>
-            <% 
+	<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;"></body>
+		<h1 align="center"  color="33CCFF"><font face="cursive" color="#3399FF"> Thank you for your shopping! Have a nice day!</font></h1>
+		<h2 align="center"><a href="index.jsp">Return to the main page</a></h2>
+	<style>
+		h1,h2{
+		font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
+	}
+            
+			</style>
+<% 
 		
 		
         String custId = (String)session.getAttribute("custId");
@@ -116,7 +120,6 @@
 			try{closeConnection();}catch(SQLException e){}
 		}
 	%>
-</body>
-</head>
-</html>>
+
+</html>
 

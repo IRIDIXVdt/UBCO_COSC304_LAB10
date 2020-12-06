@@ -5,6 +5,15 @@
 </head>
 <%@ include file="header.jsp" %>
 <body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">
+  <style>
+		tr,td{
+			font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+			font-variant: small-caps; font-weight: 400; 
+			color:rgb(255, 255, 255);
+			text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;		    
+			
+		}
+</style>
 <form method="get" action="order.jsp">
           <table align="center">
             <h3 align="center" color="33CCFF"><font face="cursive" color="#3399FF">Please Enter your Customer ID and Password to confirm</font></h3>                    

@@ -1,3 +1,7 @@
+
+
+
+
 <%@ page import="java.sql.*" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.HashMap" %>
@@ -10,9 +14,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ollivender's Magical Wand Shop Order Processing</title>
+	<%@ include file="header.jsp" %>
 </head>
 <body>
+	<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;"></body>
+	<style>
+		h1,h2{
+		font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+		font-variant: small-caps; font-weight: 400; 
+		color:rgb(255, 255, 255);
+		text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+		margin-top: 0px;
+		text-align: center;
+
+	}
+		tr,td{
+			font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+			font-variant: small-caps; font-weight: 400; 
+			color:rgb(255, 255, 255);
+			text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;		    
+			
+		}
+		table{
+        background-color: rgba(0,0,0,0.3);  
+	    border:1px solid #e7eaf1; 
+	    border-radius:5px; 
+	    box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+	    box-sizing: border-box;
+	    width: 400px;
+	    margin-top:20px;
+        margin-left:auto;
+        margin-right:auto;
+		vertical-align: middle;
+    }
+
+		
+	</style>
 	<% 
 		//NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 		NumberFormat currFormat = NumberFormat.getCurrencyInstance(Locale.US);
@@ -113,9 +150,7 @@
 
 				
 
-				//out.println("<br><a href=listprod.jsp> Return to Shopping </a></h1></tr>");
-				// Clear cart if order placed successfully	
-				//session.setAttribute("productList", new HashMap<String, ArrayList<Object>>() );
+	
 			} 
 			else if(productList.size() == 0){
 			

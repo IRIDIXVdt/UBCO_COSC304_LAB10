@@ -1,15 +1,20 @@
-<header>
-	<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-		<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-<%
-	// show current logged user
-	String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-	if(username != null){
-		out.print("<h4 align=\"center\">welcome!</h4>");
-		out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
-	}
-		
-%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Password</title>
+</head>
+<%@ include file="header.jsp" %>
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;"></body>
+<style>
+    h2{
+    font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+    font-variant: small-caps; font-weight: 400; 
+    color:rgb(255, 255, 255);
+    text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+    margin-top: 0px;
+    text-align: center;
+}
+</style>
 
 <hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
 </header>
@@ -51,5 +56,7 @@
     }
     
     %>
-    
+
+</body>
+</html>
   

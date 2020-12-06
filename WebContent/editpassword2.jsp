@@ -1,22 +1,23 @@
-<header>
-	<h1 align="center" color="33CCFF"><font face="cursive" color="#3399FF">
-		<a href="index.jsp" class ="a">Ollivender's Magical Wand Shop</a></font></h1>
-<%
-	// show current logged user
-	String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
-	if(username != null){
-		out.print("<h4 align=\"center\">welcome!</h4>");
-		out.print("<h5 align=\"center\">Signed in as: "+username+"</h5>");
-	}
-		
-%>
-
-<hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Password</title>
+</head>
+<%@ include file="header.jsp" %>
+<body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;"></body>
+<style>
+    h2{
+    font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+    font-variant: small-caps; font-weight: 400; 
+    color:rgb(255, 255, 255);
+    text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+    margin-top: 0px;
+    text-align: center;
+}
+</style>
 <%@ page language="java" import="java.io.*,java.sql.*"%>
 <%@ include file="jdbc.jsp" %>
 <%
-
 	
     session = request.getSession(true);
     String editpassword = request.getParameter("editpassword");
@@ -25,10 +26,7 @@
     boolean emptyPassword = true;
     boolean matchPassword = false;
     username = (String) session.getAttribute("authenticatedUser");
-
     
-
-
 	try
 	{
         getConnection();
@@ -37,8 +35,6 @@
         PreparedStatement stmt = con.prepareStatement(sql);
         stmt.setString(1,editpassword);
         stmt.setString(2,username);
-
-
         String sql2 = "select password from customer where userid =? ";
         PreparedStatement stmt2 = con.prepareStatement(sql2);
         stmt2.setString(1,username);
@@ -83,5 +79,5 @@
     }
     
     %>
-    
-    
+
+</html>
