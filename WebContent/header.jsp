@@ -23,19 +23,27 @@
 
 <header>
     <h1 align="center" class="h1">
-        <a href="index.jsp" ><img src="img/title.png" width=100%></a></h1>
+		<a href="index.jsp" ><img src="img/title.png" width=100%></a></h1>
+		
+		
 <%
     // show current logged user
     String username = (String)session.getAttribute("authenticatedUser"); // get username from authenticatedUser(validateLogin)
     if(username != null){
-        out.println("<p align=\"center\" class=\"p\">welcome!"+"<br>");
+        out.println("<br><p align=\"center\" class=\"p\">welcome!"+"<br>");
 		out.println("Signed in as: "+username);
 		out.println("<br><a href=\"showcart.jsp\" class=\"cart\">My Cart</a></p>");
     }
         
 %>
+<h2 align = center>
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=430 height=52 src="//music.163.com/outchain/player?type=2&id=3993358&auto=1&height=32"></iframe>	
+</h2>
+<div>
+	
+	<hr class="hr" style="height:1px;border:none;border-top:5px solid rgb(0, 0, 0);" />	
+</div>
 
-<hr class="hr" style="height:1px;border:none;border-top:5px solid rgb(0, 0, 0);" />	
 </header>
 
 
