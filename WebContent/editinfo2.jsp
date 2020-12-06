@@ -14,6 +14,8 @@
     margin-top: 0px;
     text-align: center;
 }
+    a:link{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fffdfd;}
+	a:visited{color:rgb(255, 255, 255);font-family: Arial, Helvetica, sans-serif; font-size: 35px;text-shadow: 0 0 5px #ffee00, 0 0 5px #fcf9f9;}
 </style>
 
 <hr style="height:1px;border:none;border-top:1px solid rgb(51,204,255);" />	

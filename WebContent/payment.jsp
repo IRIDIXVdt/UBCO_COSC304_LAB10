@@ -20,7 +20,7 @@
         background-color: rgba(0,0,0,0.3);  
 	    border:1px solid #e7eaf1; 
 	    border-radius:5px; 
-	    box-shadow: 0 1px 3px rgba(0,37, 55, .05);
+	    box-shadow: 0 1px 3px rgba(248, 251, 252, 0.05);
 	    box-sizing: border-box;
 	    width: 400px;
 	    margin-top:20px;
@@ -47,7 +47,7 @@
     <table style="display:inline">
     <tr>
         <td><div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Credit card number:</font></div></td>
-        <td><input required="required" size = "16"   maxlength = "16" minlength="16"  onkeyup="value=value.replace(/[^\d]/g,'')" /></td>
+        <td><input required="required" size = "16"   maxlength = "16" pattern= ".{16,}"  onkeyup="value=value.replace(/[^\d]/g,'')" /></td>
     </tr>
     <tr>
         <td><div align="center"><font face="Arial, Helvetica, sans-serif" size="2">Name on Card:</font></div></td>
@@ -60,7 +60,7 @@
     </tr>
     <tr>
         <td><div align="center"><font face="Arial, Helvetica, sans-serif" size="2">CVV:</font></div></td>
-        <td><input required="required" type="integer" name="cvv" oninput="value=value.replace(/[^\d]/g,'')" size=30 maxlength=3></td>
+        <td><input required="required" type="integer" name="cvv" pattern= ".{3,}" oninput="value=value.replace(/[^\d]/g,'')" size=30 maxlength=3></td>
     </tr>
     
     </table>
