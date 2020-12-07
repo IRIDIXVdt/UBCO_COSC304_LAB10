@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ollivender's Magical Wand Shop WareHouse</title>
+    <title>Ollivander's Magical Wand Shop WareHouse</title>
 </head>
 
 <style>

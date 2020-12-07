@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ollivender's Magical Wand Shop Checkout</title>
+    <title>Ollivander's Magical Wand Shop Checkout</title>
 </head>
 <%@ include file="header.jsp" %>
 <body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">

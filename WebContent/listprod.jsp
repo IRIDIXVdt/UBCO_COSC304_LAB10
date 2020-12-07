@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ollivender's Magical Wand Shop</title>
+	<title>Ollivander's Magical Wand Shop</title>
 	<%@ include file="header.jsp" %>
 </head>
 <body  background="img/bk2.jpg;" style="background-repeat:no-repeat;background-size:cover;background-attachment:fixed;">

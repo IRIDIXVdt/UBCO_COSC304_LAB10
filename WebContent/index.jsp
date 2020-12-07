@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Ollivender's Magical Wand Shop</title>
+		<title>Ollivander's Magical Wand Shop</title>
 		
 </head>
 <%@ include file="header.jsp" %>

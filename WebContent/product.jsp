@@ -5,7 +5,7 @@
 
 <html>
 <head>
-<title>Ollivender's Magical Wand Shop</title>
+<title>Ollivander's Magical Wand Shop</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <%@ include file="header.jsp" %>

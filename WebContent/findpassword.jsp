@@ -10,7 +10,22 @@
             height: 400px;
             width: 500px;
             border: 3px solid rgb(51,204,255);
-            border-radius:30px};
+            border-radius:30px}
+        tr,td{
+			font-family: CenturyGothic; font-size: 20px; font-style: normal; 
+			font-variant: small-caps; font-weight: 400; 
+			color:rgb(255, 255, 255);
+			text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;		    
+			
+		}
+        h1{
+        font-family: CenturyGothic; font-size: 40px; font-style: normal; 
+        font-variant: small-caps; font-weight: 400; 
+        color:rgb(255, 255, 255);
+        text-shadow: 0 0 8px #ffee00, 0 0 8px #fc0000;
+        margin-top: 0px;
+        text-align: center;
+}
         
         
         </style>
